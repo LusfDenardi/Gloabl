@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.log
+*.db
+
+# Envs
+.env
+.venv/
+venv/
+env/
+
+# IDE / Misc
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+*.bak
+*.swp
+
+# Dados temporários
+*.csv
+*.parquet
+*.xlsx
+*.json
+cache/
+tmp/
