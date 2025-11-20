@@ -1,0 +1,46 @@
+/* ===== FAIXA DE COTAÇÃO - GLOBALSTAT ===== */
+.ticker-wrapper {
+    background-color: #0a0f2c;        /* Azul escuro */
+    overflow: hidden;
+    position: relative;
+    height: 40px;
+    display: flex;
+    align-items: center;             /* Centraliza verticalmente */
+    border-top: 1px solid #222;      /* Linha superior discreta */
+}
+
+.ticker-content {
+    display: inline-block;
+    padding-left: 100%;
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+}
+
+.ticker-item {
+    display: inline-block;
+    margin-right: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+/* Cores por variação */
+.ticker-item.green {
+    color: #00ff00;
+}
+.ticker-item.red {
+    color: red;
+}
+.ticker-item.white {
+    color: white;
+}
+
+/* Animação */
+@keyframes ticker {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

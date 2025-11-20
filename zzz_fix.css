@@ -1,0 +1,54 @@
+/* === CORREÇÃO DEFINITIVA DO FUNDO PRETO === */
+html body .dash-graph,
+html body .js-plotly-plot,
+html body .plot-container,
+html body .plotly,
+html body .main-svg,
+html body .graph-container {
+    background: none !important;
+    background-color: transparent !important;
+}
+
+rect.bg,
+rect.plotbg {
+    fill: transparent !important;
+}
+
+/* === DROPDOWN ESCURO CARBON PRO === */
+.carbon-dropdown .Select-control {
+    background-color: #101217;
+    border-color: #1E2633;
+    color: #E8EDF2;
+}
+
+.carbon-dropdown .Select-menu-outer {
+    background-color: #101217;
+    border: 1px solid #1E2633;
+}
+
+.carbon-dropdown .Select-option {
+    background-color: #101217;
+    color: #E8EDF2;
+}
+
+.carbon-dropdown .Select-option.is-focused {
+    background-color: #1B2330;
+}
+
+.carbon-dropdown .Select-option.is-selected {
+    background-color: #1B2330;
+}
+
+.carbon-dropdown .Select-value-label {
+    color: #E8EDF2;
+}
+
+.carbon-dropdown .Select-placeholder {
+    color: #9AA7B5;
+}
+
+.carbon-dropdown .Select-arrow,
+.carbon-dropdown .Select-arrow-zone svg {
+    color: #E8EDF2;
+    fill: #E8EDF2;
+}
