@@ -1,0 +1,2 @@
+"""Testes para GlobalStat."""
+

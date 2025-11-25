@@ -1,0 +1,245 @@
+
+:root{
+  --bg:#0b0c0e;
+  --panel:rgba(255,255,255,0.02);
+  --panel-2:rgba(255,255,255,0.03);
+  --line:#1a1b1e;
+  --text:#e8edf2;
+  --muted:#aab3c0;
+  --accent:#59f0c8;
+  --positive:#59f0c8;
+  --negative:#ef4444;
+  --warning:#fbbf24;
+  --shadow:0 0 28px rgba(255,255,255,0.015),0 6px 20px rgba(0,0,0,0.45);
+  --radius:16px;
+  --font:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+html, body{
+  height:100%;
+  margin:0;
+  background:var(--bg)!important;
+  color:var(--text)!important;
+  font-family:var(--font)!important;
+  overflow-x:hidden;
+}
+
+/* ============================================================
+   HEADERS / TÍTULOS
+   ============================================================ */
+h1,h2,h3,h4,h5,label{
+  color:var(--text)!important;
+  text-shadow:none!important;
+}
+
+h2{
+  font-size:24px;
+  font-weight:600;
+}
+
+h4{
+  font-size:14px;
+  font-weight:700;
+  color:var(--accent)!important;
+  letter-spacing:.03em;
+  margin-bottom:6px;
+}
+
+/* ============================================================
+   WRAPPERS / LAYOUT ORIGINAL PRESERVADO
+   ============================================================ */
+.app{
+  width:100%!important;
+  padding:24px!important;
+  box-sizing:border-box!important;
+}
+
+.controls-grid{
+  display:grid;
+  gap:12px;
+  grid-template-columns:repeat(4,minmax(220px,1fr));
+}
+
+@media (max-width:1200px){
+  .controls-grid{ grid-template-columns:repeat(3,1fr); }
+}
+@media (max-width:900px){
+  .controls-grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:600px){
+  .controls-grid{ grid-template-columns:1fr; }
+}
+
+/* ============================================================
+   CARDS (tema igual ao painel principal)
+   ============================================================ */
+.card{
+  background:var(--panel);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+/* ============================================================
+   BOTÕES — "← Voltar"
+   ============================================================ */
+.btn-tab{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.05);
+  color:var(--text)!important;
+  padding:8px 16px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:13px;
+  font-weight:600;
+  transition:all .24s ease;
+}
+
+.btn-tab:hover{
+  background:rgba(89,240,200,0.15);
+  border-color:var(--accent);
+  color:var(--accent)!important;
+  transform:translateY(-1px);
+  box-shadow:0 0 14px rgba(89,240,200,0.35);
+}
+
+/* ============================================================
+   DROPDOWNS — estilo mesmo do painel principal
+   ============================================================ */
+.retro-dropdown .Select-control{
+  background:transparent!important;
+  border:none!important;
+  border-bottom:1px solid rgba(255,255,255,0.18)!important;
+  border-radius:0!important;
+  height:34px!important;
+  box-shadow:none!important;
+}
+
+.retro-dropdown .Select-control:hover{
+  border-bottom-color:var(--accent)!important;
+}
+
+/* Texto das opções */
+.retro-dropdown .Select-option{
+  color:#fff!important;
+  background:rgba(15,17,20,0.98)!important;
+  padding:8px 12px!important;
+  font-size:13px!important;
+}
+
+.retro-dropdown .Select-option:hover{
+  background:rgba(89,240,200,0.15)!important;
+  color:var(--accent)!important;
+}
+
+/* Texto selecionado */
+.retro-dropdown .Select-value-label{
+  color:#fff!important;
+  font-weight:600!important;
+}
+
+/* ============================================================
+   AREA DE MÉTRICAS (aside)
+   ============================================================ */
+.aside{
+  padding:14px;
+  overflow-y:auto;
+  max-height:calc(100vh - 220px)!important;
+}
+
+.aside .metric-row{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:6px;
+  padding:6px 0;
+  border-bottom:1px dashed rgba(255,255,255,0.06);
+}
+
+.aside .metric-row:last-child{
+  border-bottom:none;
+}
+
+.metric-row .k{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.metric-row .v{
+  font-variant-numeric:tabular-nums;
+}
+
+/* BADGES */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 8px;
+  font-size:12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.04);
+}
+
+.badge--pos{
+  background:rgba(89,240,200,0.12);
+  border-color:rgba(89,240,200,0.35);
+  color:var(--positive);
+}
+
+.badge--neg{
+  background:rgba(239,68,68,0.12);
+  border-color:rgba(239,68,68,0.35);
+  color:var(--negative);
+}
+
+.badge--neu{
+  background:rgba(148,163,184,0.12);
+  border-color:rgba(148,163,184,0.25);
+  color:var(--muted);
+}
+
+/* ============================================================
+   PLOTLY — fundo transparente + grid suave
+   ============================================================ */
+.dash-graph, .js-plotly-plot, .plot-container{
+  background:transparent!important;
+}
+
+svg{ background:transparent!important; fill:none!important; }
+
+.xgrid, .ygrid{
+  stroke:rgba(255,255,255,0.05)!important;
+}
+
+/* ============================================================
+   LOADING
+   ============================================================ */
+._dash-loading{
+  background-color:var(--bg)!important;
+  color:var(--accent)!important;
+  font-family:Consolas, monospace!important;
+}
+
+._dash-loading::before{
+  content:"Carregando..."!important;
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+  height:100vh!important;
+  font-size:18px!important;
+  color:var(--accent)!important;
+}
+.main-grid{
+  display:grid !important;
+  grid-template-columns: minmax(0,1fr) 360px !important;
+  gap:16px !important;
+}
+
+.aside{
+  max-height: calc(100vh - 200px) !important;
+  overflow-y:auto !important;
+}

@@ -1,0 +1,405 @@
+/* ============================================================
+   GLOBALSTAT - Tema Carbon Pro (CSS Unificado)
+   ============================================================ */
+
+:root {
+  --bg: #0B0C0D;
+  --panel: #0F1114;
+  --panel-alt: #0C0F14;
+  --panel-2: #12161B;
+  --border: #1E2633;
+  --edge: #1E293B;
+  --line: #1E293B;
+  --text: #E6F1EE;
+  --text-alt: #E8EDF2;
+  --muted: #9AA7A1;
+  --muted-alt: #9AA7B5;
+  --primary: #C4FFE4;
+  --accent: #59F0C8;
+  --accent-alt: #6FB4FF;
+  --positive: #4ADE80;
+  --good: #10B981;
+  --negative: #F87171;
+  --danger: #EF4444;
+  --warning: #FBBF24;
+  --warn: #FFD84D;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --shadow-alt: 0 0 28px rgba(255,255,255,0.015),0 6px 20px rgba(0,0,0,0.45);
+  --radius: 12px;
+  --radius-alt: 16px;
+  --font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --grid-color: rgba(255,255,255,0.08);
+}
+
+/* ============================================================
+   BASE / RESET
+   ============================================================ */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: var(--font) !important;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   HEADERS / TÍTULOS
+   ============================================================ */
+h1, h2, h3, h4, h5, h6, label {
+  color: var(--text) !important;
+  text-shadow: none !important;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent) !important;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+
+/* ============================================================
+   WRAPPERS / LAYOUT
+   ============================================================ */
+.app {
+  width: 100% !important;
+  padding: 24px !important;
+  box-sizing: border-box !important;
+}
+
+.controls-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+}
+
+@media (max-width: 1200px) {
+  .controls-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .controls-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .controls-grid { grid-template-columns: 1fr; }
+}
+
+.main-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 360px !important;
+  gap: 16px !important;
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.card {
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card__title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  padding: 8px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* ============================================================
+   BOTÕES
+   ============================================================ */
+.btn-tab {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  color: var(--text) !important;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all .24s ease;
+  box-shadow: var(--shadow);
+}
+
+.btn-tab:hover {
+  background: rgba(89,240,200,0.15);
+  border-color: var(--accent);
+  color: var(--accent) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 0 14px rgba(89,240,200,0.35);
+}
+
+.btn-tab:active {
+  transform: scale(.97);
+  opacity: .9;
+}
+
+button.quick {
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  padding: 4px 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,.4);
+  transition: all .18s ease-in-out;
+}
+
+button.quick:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(180deg, rgba(111,255,233,.08), rgba(111,255,233,.05));
+  box-shadow: 0 6px 18px rgba(111,255,233,.15);
+  border-color: rgba(111,255,233,.25);
+}
+
+/* ============================================================
+   DROPDOWNS
+   ============================================================ */
+.retro-dropdown .Select-control,
+.carbon-dropdown .Select-control {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(255,255,255,0.18) !important;
+  border-radius: 0 !important;
+  height: 34px !important;
+  box-shadow: none !important;
+}
+
+.retro-dropdown .Select-control:hover,
+.carbon-dropdown .Select-control:hover {
+  border-bottom-color: var(--accent) !important;
+}
+
+.retro-dropdown .Select-placeholder,
+.retro-dropdown .Select-value-label,
+.carbon-dropdown .Select-placeholder,
+.carbon-dropdown .Select-value-label {
+  color: #fff !important;
+  font-weight: 600 !important;
+}
+
+.retro-dropdown .Select-menu-outer,
+.carbon-dropdown .Select-menu-outer {
+  background: rgba(15,17,20,0.98) !important;
+  border: 1px solid rgba(255,255,255,0.05) !important;
+}
+
+.retro-dropdown .Select-option,
+.carbon-dropdown .Select-option {
+  color: #fff !important;
+  background: transparent !important;
+  padding: 8px 12px !important;
+  font-size: 13px !important;
+}
+
+.retro-dropdown .Select-option:hover,
+.carbon-dropdown .Select-option:hover {
+  background: rgba(89,240,200,0.15) !important;
+  color: var(--accent) !important;
+}
+
+/* ============================================================
+   ÁREA DE MÉTRICAS (ASIDE)
+   ============================================================ */
+.aside {
+  padding: 14px;
+  overflow-y: auto;
+  max-height: calc(100vh - 220px) !important;
+}
+
+.aside .metric-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.06);
+}
+
+.aside .metric-row:last-child {
+  border-bottom: none;
+}
+
+.metric-row .k {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.metric-row .v {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   BADGES
+   ============================================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+}
+
+.badge--pos {
+  background: rgba(89,240,200,0.12);
+  border-color: rgba(89,240,200,0.35);
+  color: var(--positive);
+}
+
+.badge--neg {
+  background: rgba(239,68,68,0.12);
+  border-color: rgba(239,68,68,0.35);
+  color: var(--negative);
+}
+
+.badge--neu {
+  background: rgba(148,163,184,0.12);
+  border-color: rgba(148,163,184,0.25);
+  color: var(--muted);
+}
+
+/* ============================================================
+   PLOTLY / GRÁFICOS
+   ============================================================ */
+.dash-graph,
+.dash-graph-container,
+.plot-container,
+.js-plotly-plot {
+  background: transparent !important;
+}
+
+svg {
+  background: transparent !important;
+  fill: none !important;
+}
+
+.xgrid, .ygrid {
+  stroke: rgba(255,255,255,0.05) !important;
+}
+
+/* ============================================================
+   LOADING
+   ============================================================ */
+._dash-loading,
+.dash-loading,
+.dash-spinner {
+  background-color: var(--bg) !important;
+  color: var(--accent) !important;
+  font-family: Consolas, monospace !important;
+}
+
+._dash-loading::before {
+  content: "Carregando..." !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100vh !important;
+  font-size: 18px !important;
+  color: var(--accent) !important;
+}
+
+.dash-loading .js-plotly-plot,
+.dash-spinner .js-plotly-plot,
+.dash-loading .plot-container,
+.dash-spinner .plot-container {
+  background-color: var(--bg) !important;
+}
+
+.dash-loading .js-plotly-plot svg rect.bg,
+.dash-spinner .js-plotly-plot svg rect.bg {
+  fill: var(--bg) !important;
+}
+
+/* ============================================================
+   CAMPOS DO CHAT
+   ============================================================ */
+#user-input {
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+#send-btn {
+  background: linear-gradient(180deg, rgba(111,255,233,0.15), rgba(59,255,176,0.12));
+  border: 1px solid rgba(111,255,233,0.35);
+  color: #CDEDE8;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* ============================================================
+   CARD DO CHAT
+   ============================================================ */
+.chat-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.03));
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: inset 0 0 6px rgba(111,255,233,.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-card__title {
+  padding: 8px 10px;
+  font-weight: 700;
+  color: var(--muted);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  font-size: 14px;
+}
+
+.chat-card__body {
+  flex: 1 1 auto;
+  padding: 12px;
+  overflow-y: auto;
+  background: transparent;
+}
+
+#chat-history {
+  border: none;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* ============================================================
+   HEADER GLOBALSTAT
+   ============================================================ */
+.gs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 0 0 8px 0;
+}
+
+.gs-title {
+  flex: 1;
+  text-align: center;
+}
+
+/* ============================================================
+   SCRIPT PARA RECOLORIR PLOTS (será injetado via JS)
+   ============================================================ */
+
